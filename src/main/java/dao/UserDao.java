@@ -1,4 +1,4 @@
-package service.dao;
+package dao;
 
 import entity.User;
 

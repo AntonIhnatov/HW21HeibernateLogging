@@ -1,12 +1,6 @@
 import entity.*;
-import jakarta.persistence.Query;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import service.*;
-import service.impl.CustomerDaoImpl;
-import util.HibernateUtils;
 
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -31,6 +25,7 @@ public class Main {
                 .collect(Collectors.toList());
 
 //                users.forEach(service::saveUser);
+
 
         List<Customer> customers = Stream.of(
                         CustomerService.createCustomer("Anna", "Merit", "+123-456-7890", users.get(0)),
@@ -105,27 +100,30 @@ public class Main {
 //        }
 
         //Змінити будь-що у замовленні
-//        orderService.updateCustomerOrder(1, "Новый комментарий", LocalDateTime.now());
+
+//        orderService.updateCustomerOrder(1, "Самый свежий комментарий", LocalDateTime.now());
 
 
-//        List<Customer> customerListWithOrders = customerService.getAllCustomersOrders();
-//        for (Customer customer : customerListWithOrders) {
-//            System.out.println("Имя кастомера: " + customer.getName());
-//            System.out.println("Фамилия кастомера: " + customer.getSurname());
-//            System.out.println("Номер кастомера: " + customer.getPhone());
-//            System.out.println("Заказы кастомера:");
-//
-//            for (Order order : customer.getOrders()) {
-//                System.out.println("  Заказ #" + order.getId());
-//                System.out.println("  Название заказа: " + order.getName());
-//                System.out.println("  Сумма заказа: " + order.getTotalSum());
-//
-//                int totalProductCount = orderService.getTotalQuantityForOrder(order.getId()); // Получаем общее количество продуктов
-//                System.out.println("  Количество продуктов в заказе (ИМЕННО ОБЩЕЕ КОЛ-ВО ПРОДУКТОВ, А НЕ КОЛ-ВО ПОЗИЦИЙ В ЗАКАЗЕ): " + totalProductCount);
-//                System.out.println("  -----------------------------");
-//            }
-//
-//            System.out.println("===============================");
-//        }
+        List<Customer> customerListWithOrders = customerService.getAllCustomersOrders();
+        for (Customer customer : customerListWithOrders) {
+            System.out.println("Имя кастомера: " + customer.getName());
+            System.out.println("Фамилия кастомера: " + customer.getSurname());
+            System.out.println("Номер кастомера: " + customer.getPhone());
+            System.out.println("Заказы кастомера:");
+
+            for (Order order : customer.getOrders()) {
+                System.out.println("  Заказ #" + order.getId());
+                System.out.println("  Название заказа: " + order.getName());
+                System.out.println("  Сумма заказа: " + order.getTotalSum());
+
+                int totalProductCount = orderService.getTotalQuantityForOrder(order.getId());
+                System.out.println("  Количество продуктов в заказе (ИМЕННО ОБЩЕЕ КОЛ-ВО ПРОДУКТОВ, А НЕ КОЛ-ВО ПОЗИЦИЙ В ЗАКАЗЕ): " + totalProductCount);
+                System.out.println("  -----------------------------");
+            }
+
+            System.out.println("===============================");
+        }
+
     }
 }
+

@@ -35,7 +35,10 @@ ALTER SEQUENCE order_details_id_seq RESTART WITH 1;]]></console>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files>
-      <object connection-id="6c96bbae-e476-4846-970f-098f950fe29c" object-ref="schemas/public/tables/products" />
+      <object connection-id="6c96bbae-e476-4846-970f-098f950fe29c" object-ref="schemas/public/tables/orders" />
+      <object connection-id="6c96bbae-e476-4846-970f-098f950fe29c" object-ref="schemas/public/tables/order_product" />
+      <object connection-id="6c96bbae-e476-4846-970f-098f950fe29c" object-ref="schemas/public/tables/customers" />
+      <object connection-id="6c96bbae-e476-4846-970f-098f950fe29c" object-ref="schemas/public/tables/order_details" />
     </open-files>
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">

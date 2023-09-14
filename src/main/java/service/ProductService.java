@@ -1,15 +1,15 @@
-package dao.impl;
+package service;
 
 import entity.Product;
 import lombok.extern.log4j.Log4j;
-import service.ProductDaoImpl;
+import impl.ProductDaoImpl;
+import lombok.extern.log4j.Log4j2;
 
 import java.util.List;
 
-@Log4j
+@Log4j2
 public class ProductService {
     private final ProductDaoImpl customerDao = new ProductDaoImpl();
-//    private final Logger logger = Logger.getLogger(ProductService.class);
 
     public void saveProduct(Product product) {
         log.info("Started saving product");
@@ -26,6 +26,7 @@ public class ProductService {
     }
 
     public static Product createProduct(String name, double price, int quantity) {
+        log.debug("Creating product with name: {}, price: {}, quantity: {}", name, price, quantity);
         Product product = new Product();
         product.setName(name);
         product.setPrice(price);

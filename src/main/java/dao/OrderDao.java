@@ -1,6 +1,7 @@
-package service.dao;
+package dao;
 
 import entity.Order;
+import entity.OrderDetails;
 import entity.User;
 
 import java.time.LocalDateTime;

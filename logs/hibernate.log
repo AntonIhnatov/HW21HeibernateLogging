@@ -1,0 +1,27 @@
+[2023-09-14T17:07:37,387] [main] INFO  Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+[2023-09-14T17:07:37,393] [main] INFO  Environment - HHH000205: Loaded properties from resource hibernate.properties: {hibernate.connection.driver_class=org.postgresql.Driver, hibernate.hbm2ddl.auto=update, hibernate.connection.password=****, hibernate.connection.username=postgres, hibernate.connection.url=jdbc:postgresql://localhost/HW19, hibernate.bytecode.use_reflection_optimizer=false, show_sql=true}
+[2023-09-14T17:07:37,967] [main] WARN  pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+[2023-09-14T17:07:37,969] [main] INFO  pooling - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[2023-09-14T17:07:37,969] [main] INFO  pooling - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost/HW19]
+[2023-09-14T17:07:37,969] [main] INFO  pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-09-14T17:07:37,969] [main] INFO  pooling - HHH10001003: Autocommit mode: false
+[2023-09-14T17:07:37,975] [main] INFO  pooling - HHH10001115: Connection pool size: 20 (min=1)
+[2023-09-14T17:07:38,186] [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[2023-09-14T17:07:39,017] [main] INFO  access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7459a21e] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[2023-09-14T17:07:39,136] [main] INFO  JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-09-14T17:07:39,169] [main] INFO  CustomerService - Started retrieving all customers with orders
+[2023-09-14T17:07:39,513] [main] INFO  CustomerService - Finished retrieving all customers with orders. Total customers: 5
+[2023-09-14T17:07:39,516] [main] INFO  OrderDaoImpl - Calculating total quantity for order ID: 5
+[2023-09-14T17:07:39,577] [main] INFO  OrderDaoImpl - Total quantity for order ID 5 is 2
+[2023-09-14T17:07:39,578] [main] INFO  OrderDaoImpl - Calculating total quantity for order ID: 6
+[2023-09-14T17:07:39,580] [main] INFO  OrderDaoImpl - Total quantity for order ID 6 is 34
+[2023-09-14T17:07:39,580] [main] INFO  OrderDaoImpl - Calculating total quantity for order ID: 3
+[2023-09-14T17:07:39,582] [main] INFO  OrderDaoImpl - Total quantity for order ID 3 is 30
+[2023-09-14T17:07:39,582] [main] INFO  OrderDaoImpl - Calculating total quantity for order ID: 2
+[2023-09-14T17:07:39,584] [main] INFO  OrderDaoImpl - Total quantity for order ID 2 is 34
+[2023-09-14T17:07:39,584] [main] INFO  OrderDaoImpl - Calculating total quantity for order ID: 1
+[2023-09-14T17:07:39,585] [main] INFO  OrderDaoImpl - Total quantity for order ID 1 is 105
+[2023-09-14T17:07:39,586] [main] INFO  OrderDaoImpl - Calculating total quantity for order ID: 7
+[2023-09-14T17:07:39,588] [main] INFO  OrderDaoImpl - Total quantity for order ID 7 is 183
+[2023-09-14T17:07:39,589] [main] INFO  OrderDaoImpl - Calculating total quantity for order ID: 4
+[2023-09-14T17:07:39,590] [main] INFO  OrderDaoImpl - Total quantity for order ID 4 is 34

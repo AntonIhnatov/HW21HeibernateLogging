@@ -1,6 +1,8 @@
-package service;
+package impl;
 
 import entity.Product;
+import jakarta.persistence.TypedQuery;
+import lombok.extern.log4j.Log4j2;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -9,19 +11,18 @@ import util.HibernateUtils;
 
 import java.util.List;
 
+@Log4j2
 public class ProductDaoImpl implements ProductDao {
 
     private final SessionFactory factory = HibernateUtils.getSessionFactory();
 
     @Override
     public void save(Product product) {
-//        System.out.println("Trying to save product...");
         final Session session = factory.openSession();
         final Transaction transaction = session.beginTransaction();
         session.save(product);
         transaction.commit();
         session.close();
-//        System.out.println("Product saved successfully.");
     }
 
     @Override
@@ -31,14 +32,16 @@ public class ProductDaoImpl implements ProductDao {
 
     @Override
     public List<Product> findAll() {
-        final Session session = factory.openSession();
-        List products = session.createQuery("FROM Product").getResultList();
-        session.close();
-        return products;
+        try (Session session = factory.openSession()) {
+            log.info("Fetching all products from the database");
+            TypedQuery<Product> query = session.createQuery("FROM Product", Product.class);
+            List<Product> products = query.getResultList();
+            log.info("Fetched {} products from the database", products.size());
+            return products;
+        }
     }
 
     @Override
     public void updateProduct(int id) {
-
     }
 }
