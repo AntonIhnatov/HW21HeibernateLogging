@@ -1,13 +1,21 @@
-package service;
+package dao.impl;
 
 import entity.User;
-import service.impl.UserDaoImpl;
+import lombok.extern.log4j.Log4j;
+import service.UserDaoImpl;
 
+@Log4j
 public class UserService {
     private final UserDaoImpl userDao = new UserDaoImpl();
 
     public void saveUser(User user) {
-        userDao.save(user);
+        log.info("Started saving user");
+        if (user == null) {
+            log.error("User can not be null!");
+        } else {
+            userDao.save(user);
+            log.warn("Saved user successful with name " + user.getUsername());
+        }
     }
 
     public User getById(int id) {

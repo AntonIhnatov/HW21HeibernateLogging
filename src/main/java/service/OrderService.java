@@ -1,9 +1,9 @@
-package service;
+package dao.impl;
 
 import entity.Customer;
 import entity.Order;
 import entity.Product;
-import service.impl.OrderDaoImpl;
+import service.OrderDaoImpl;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -29,7 +29,10 @@ public class OrderService {
         return order;
     }
 
+//    private final Logger logger = LoggerUtil.getLogger(OrderService.class);
+
     public List<Order> getAllOrdersWithDetails() {
+//        logger.log(Level.INFO, "Info log message for method getAllOrdersWithDetails");
         return orderDao.getAllOrdersWithDetailsSortedByTimePlaced();
     }
 

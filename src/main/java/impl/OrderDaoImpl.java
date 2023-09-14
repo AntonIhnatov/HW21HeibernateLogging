@@ -1,4 +1,4 @@
-package service.impl;
+package service;
 
 import entity.Order;
 import entity.User;
@@ -6,7 +6,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
-import service.dao.OrderDao;
+import dao.OrderDao;
 import util.HibernateUtils;
 
 import java.time.LocalDateTime;

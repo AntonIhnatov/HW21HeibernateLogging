@@ -1,8 +1,8 @@
-package service;
+package dao.impl;
 
 import entity.Order;
 import entity.OrderDetails;
-import service.impl.OrderDetailsDaoImpl;
+import service.OrderDetailsDaoImpl;
 
 import java.time.LocalDateTime;
 

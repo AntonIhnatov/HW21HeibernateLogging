@@ -1,16 +1,13 @@
-package service.impl;
+package service;
 
 import entity.Customer;
-import entity.Order;
 import entity.User;
-import jakarta.persistence.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import service.dao.CustomerDao;
+import dao.CustomerDao;
 import util.HibernateUtils;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 public class CustomerDaoImpl implements CustomerDao {

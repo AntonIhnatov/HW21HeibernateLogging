@@ -1,11 +1,10 @@
-package service.impl;
+package service;
 
-import entity.Order;
 import entity.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import service.dao.UserDao;
+import dao.UserDao;
 import util.HibernateUtils;
 
 import java.util.List;
@@ -15,13 +14,11 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public void save(User user) {
-        System.out.println("Trying to save user...");
         final Session session = factory.openSession();
         final Transaction transaction = session.beginTransaction();
         session.save(user);
         transaction.commit();
         session.close();
-        System.out.println("User saved successfully.");
     }
 
 

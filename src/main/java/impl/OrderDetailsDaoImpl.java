@@ -1,11 +1,11 @@
-package service.impl;
+package service;
 
 import entity.OrderDetails;
 import entity.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import service.dao.OrderDetailsDao;
+import dao.OrderDetailsDao;
 import util.HibernateUtils;
 
 import java.util.List;

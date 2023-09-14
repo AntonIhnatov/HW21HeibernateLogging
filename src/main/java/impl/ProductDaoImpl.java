@@ -1,13 +1,12 @@
-package service.impl;
+package service;
 
 import entity.Product;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import service.dao.ProductDao;
+import dao.ProductDao;
 import util.HibernateUtils;
 
-import javax.management.Query;
 import java.util.List;
 
 public class ProductDaoImpl implements ProductDao {
@@ -16,13 +15,13 @@ public class ProductDaoImpl implements ProductDao {
 
     @Override
     public void save(Product product) {
-        System.out.println("Trying to save product...");
+//        System.out.println("Trying to save product...");
         final Session session = factory.openSession();
         final Transaction transaction = session.beginTransaction();
         session.save(product);
         transaction.commit();
         session.close();
-        System.out.println("Product saved successfully.");
+//        System.out.println("Product saved successfully.");
     }
 
     @Override

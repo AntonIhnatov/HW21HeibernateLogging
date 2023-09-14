@@ -1,9 +1,8 @@
-package service;
+package dao.impl;
 
 import entity.Customer;
-import entity.Order;
 import entity.User;
-import service.impl.CustomerDaoImpl;
+import service.CustomerDaoImpl;
 
 import java.util.List;
 

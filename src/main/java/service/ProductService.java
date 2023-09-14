@@ -1,18 +1,27 @@
-package service;
+package dao.impl;
 
 import entity.Product;
-import service.impl.ProductDaoImpl;
+import lombok.extern.log4j.Log4j;
+import service.ProductDaoImpl;
 
 import java.util.List;
 
+@Log4j
 public class ProductService {
     private final ProductDaoImpl customerDao = new ProductDaoImpl();
+//    private final Logger logger = Logger.getLogger(ProductService.class);
 
     public void saveProduct(Product product) {
-        customerDao.save(product);
+        log.info("Started saving product");
+        if (product == null) {
+            log.error("Product can not be null!");
+        } else {
+            customerDao.save(product);
+            log.warn("Saved product successful with name " + product.getName());
+        }
     }
 
-    public List<Product> getAllProducts(){
+    public List<Product> getAllProducts() {
         return customerDao.findAll();
     }
 
